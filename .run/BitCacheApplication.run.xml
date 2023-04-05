@@ -1,0 +1,17 @@
+<component name="ProjectRunConfigurationManager">
+    <configuration default="false" name="BitCacheApplication" type="SpringBootApplicationConfigurationType"
+                   factoryName="Spring Boot" nameIsGenerated="true">
+        <module name="bit-cache"/>
+        <option name="SPRING_BOOT_MAIN_CLASS" value="com.bit.cache.BitCacheApplication"/>
+        <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources"/>
+        <extension name="coverage">
+            <pattern>
+                <option name="PATTERN" value="com.bit.cache.*"/>
+                <option name="ENABLED" value="true"/>
+            </pattern>
+        </extension>
+        <method v="2">
+            <option name="Make" enabled="true"/>
+        </method>
+    </configuration>
+</component>

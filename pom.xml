@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.0.0</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <groupId>com.bit</groupId>
+    <artifactId>bit</artifactId>
+    <version>${revision}</version>
+    <packaging>pom</packaging>
+
+    <name>Bit-Cloud</name>
+    <url>http://www.bit.vip</url>
+    <modules>
+        <module>bit-dependencies</module>
+        <module>bit-main</module>
+        <module>bit-module</module>
+    </modules>
+    <description>Bit管理系统</description>
+
+    <properties>
+        <revision>1.0.0</revision>
+        <java.version>17</java.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <spring-boot.version>3.0.4</spring-boot.version>
+        <spring-cloud.version>2022.0.1</spring-cloud.version>
+        <spring-boot-admin.version>3.0.0-M4</spring-boot-admin.version>
+        <spring-shell.version>3.0.0</spring-shell.version>
+
+        <spring-cloud-alibaba.version>2022.0.0.0-RC1</spring-cloud-alibaba.version>
+        <spring-cloud-tencent.version>1.10.2-2022.0.1</spring-cloud-tencent.version>
+
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!--  Bit  -->
+            <dependency>
+                <groupId>com.bit</groupId>
+                <artifactId>bit-dependencies</artifactId>
+                <version>${revision}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!--  Spring Cloud  -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!--  Spring Boot  -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!--  Spring Other  -->
+            <dependency>
+                <groupId>org.springframework.shell</groupId>
+                <artifactId>spring-shell-dependencies</artifactId>
+                <version>${spring-shell.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-dependencies</artifactId>
+                <version>${spring-boot-admin.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!--  Spring Cloud Alibaba  -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!--  Spring Cloud Tencent  -->
+            <dependency>
+                <groupId>com.tencent.cloud</groupId>
+                <artifactId>spring-cloud-tencent-dependencies</artifactId>
+                <version>${spring-cloud-tencent.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <repositories>
+        <repository>
+            <id>public</id>
+            <name>aliyun nexus</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+
+        <repository>
+            <id>huaweicloud</id>
+            <name>huaweicloud nexus</name>
+            <url>https://repo.huaweicloud.com/repository/maven</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>public</id>
+            <name>aliyun nexus</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+
+        <pluginRepository>
+            <id>huaweicloud</id>
+            <name>huaweicloud nexus</name>
+            <url>https://repo.huaweicloud.com/repository/maven</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
+</project>

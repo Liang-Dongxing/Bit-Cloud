@@ -1,0 +1,40 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <groupId>com.bit</groupId>
+        <artifactId>bit</artifactId>
+        <version>${revision}</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>bit-main</artifactId>
+    <version>${revision}</version>
+
+    <packaging>jar</packaging>
+    <name>bit-main</name>
+
+    <profiles>
+        <profile>
+            <id>local</id>
+            <properties>
+                <spring.active>local</spring.active>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <spring.active>dev</spring.active>
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <spring.active>prod</spring.active>
+            </properties>
+        </profile>
+    </profiles>
+</project>
