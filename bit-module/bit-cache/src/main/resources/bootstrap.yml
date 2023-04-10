@@ -1,0 +1,27 @@
+server:
+  port: 7001
+
+spring:
+  application:
+    name: bit-cache
+  cloud:
+    polaris:
+      enabled: true
+      address: grpc://192.168.31.88:14002
+      namespace: bit-cloud
+      service: ${spring.application.name}
+      config:
+        enabled: true
+        address: grpc://192.168.31.88:14003
+    nacos:
+      discovery:
+        enabled: false
+        server-addr: http://192.168.31.88:14011
+        namespace: a5e2ec03-1e59-4a37-b204-bce820fc01d2
+        service: ${spring.application.name}
+      config:
+        enabled: false
+        server-addr: http://192.168.31.88:14011
+        namespace: a5e2ec03-1e59-4a37-b204-bce820fc01d2
+        name: ${spring.application.name}
+        file-extension: yml
