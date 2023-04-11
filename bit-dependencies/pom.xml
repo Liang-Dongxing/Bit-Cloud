@@ -4,12 +4,13 @@
 
     <groupId>com.bit</groupId>
     <artifactId>bit-dependencies</artifactId>
-    <version>1.0.0</version>
+    <version>${revision}</version>
 
     <packaging>pom</packaging>
     <name>bit-dependencies</name>
 
     <properties>
+        <revision>1.0.0</revision>
         <hutool.version>5.8.14</hutool.version>
         <poi.version>5.2.2</poi.version>
         <pagehelper.boot.version>1.4.6</pagehelper.boot.version>
@@ -73,6 +74,12 @@
                 <groupId>com.alibaba.fastjson2</groupId>
                 <artifactId>fastjson2</artifactId>
                 <version>${fastjson2.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.bit</groupId>
+                <artifactId>bit-common-core</artifactId>
+                <version>${revision}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

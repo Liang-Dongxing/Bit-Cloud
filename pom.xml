@@ -3,12 +3,6 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.0</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
 
     <groupId>com.bit</groupId>
     <artifactId>bit</artifactId>
@@ -20,7 +14,10 @@
     <modules>
         <module>bit-dependencies</module>
         <module>bit-main</module>
-        <module>bit-module</module>
+        <module>bit-modules</module>
+        <module>bit-api</module>
+        <module>bit-auth</module>
+        <module>bit-common</module>
     </modules>
     <description>Bit管理系统</description>
 
