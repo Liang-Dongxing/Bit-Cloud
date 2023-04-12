@@ -1,24 +1,22 @@
 package com.bit.auth.service;
 
-import com.bit.common.constant.CacheConstants;
-import com.bit.common.constant.Constants;
-import com.bit.common.constant.UserConstants;
-import com.bit.common.core.domain.entity.SysUser;
-import com.bit.common.core.domain.model.LoginUser;
+import com.bit.common.core.constant.CacheConstants;
+import com.bit.common.core.constant.Constants;
+import com.bit.common.core.exception.ServiceException;
+import com.bit.common.core.exception.user.BlackListException;
+import com.bit.common.core.exception.user.CaptchaException;
+import com.bit.common.core.exception.user.CaptchaExpireException;
+import com.bit.common.core.exception.user.UserNotExistsException;
+import com.bit.common.core.exception.user.UserPasswordNotMatchException;
+import com.bit.common.core.manager.AsyncManager;
 import com.bit.common.core.redis.RedisCache;
-import com.bit.common.exception.ServiceException;
-import com.bit.common.exception.user.BlackListException;
-import com.bit.common.exception.user.CaptchaException;
-import com.bit.common.exception.user.CaptchaExpireException;
-import com.bit.common.exception.user.UserNotExistsException;
-import com.bit.common.exception.user.UserPasswordNotMatchException;
-import com.bit.common.utils.DateUtils;
-import com.bit.common.utils.MessageUtils;
-import com.bit.common.utils.StringUtils;
-import com.bit.common.utils.ip.IpUtils;
-import com.bit.framework.manager.AsyncManager;
+import com.bit.common.core.utils.DateUtils;
+import com.bit.common.core.utils.MessageUtils;
+import com.bit.common.core.utils.StringUtils;
+import com.bit.common.core.utils.ip.IpUtils;
+import com.bit.common.security.context.AuthenticationContextHolder;
+import com.bit.common.security.domain.LoginUser;
 import com.bit.framework.manager.factory.AsyncFactory;
-import com.bit.framework.security.context.AuthenticationContextHolder;
 import com.bit.system.service.ISysConfigService;
 import com.bit.system.service.ISysUserService;
 import jakarta.annotation.Resource;
@@ -27,6 +25,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.token.TokenService;
 import org.springframework.stereotype.Component;
 
 /**

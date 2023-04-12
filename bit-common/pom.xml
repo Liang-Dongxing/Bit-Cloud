@@ -18,6 +18,7 @@
 
     <modules>
         <module>bit-common-core</module>
+        <module>bit-common-security</module>
     </modules>
 
 </project>

@@ -1,0 +1,24 @@
+{
+  "properties": [
+    {
+      "name": "captcha.type",
+      "type": "java.lang.String",
+      "description": "Description for captcha.type."
+    },
+    {
+      "name": "captcha.width",
+      "type": "java.lang.String",
+      "description": "Description for captcha.width."
+    },
+    {
+      "name": "captcha.image-format",
+      "type": "java.lang.String",
+      "description": "Description for captcha.image-format."
+    },
+    {
+      "name": "captcha.height",
+      "type": "java.lang.String",
+      "description": "Description for captcha.height."
+    }
+  ]
+}

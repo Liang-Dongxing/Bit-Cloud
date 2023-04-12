@@ -1,0 +1,15 @@
+spring:
+  data:
+    redis:
+      host: 192.168.31.88
+      port: 16379
+      password: liangdongxing
+
+captcha:
+  # 验证码类型 math 数组计算 char 字符验证
+  type: char
+  # 验证码图片格式 GIF 和 png
+  image-format: gif
+  # 验证码长宽
+  width: 160
+  height: 60
