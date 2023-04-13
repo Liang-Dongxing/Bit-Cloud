@@ -1,8 +1,8 @@
 package com.bit.auth.controller;
 
+import com.bit.auth.domain.RegisterBody;
 import com.bit.common.core.controller.BaseController;
 import com.bit.common.core.domain.AjaxResult;
-import com.bit.common.core.domain.model.RegisterBody;
 import com.bit.common.utils.StringUtils;
 import com.bit.framework.web.service.SysRegisterService;
 import com.bit.system.service.ISysConfigService;

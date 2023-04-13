@@ -2,6 +2,7 @@ package com.bit.auth.controller;
 
 import cn.hutool.captcha.ICaptcha;
 import cn.hutool.core.math.Calculator;
+import com.bit.api.feign.ISysConfigService;
 import com.bit.auth.config.CaptchaConfig;
 import com.bit.common.core.constant.CacheConstants;
 import com.bit.common.core.constant.Constants;
@@ -9,7 +10,6 @@ import com.bit.common.core.domain.AjaxResult;
 import com.bit.common.core.redis.RedisCache;
 import com.bit.common.core.utils.sign.Base64;
 import com.bit.common.core.utils.uuid.IdUtils;
-import com.bit.system.service.ISysConfigService;
 import com.google.code.kaptcha.Producer;
 import com.wf.captcha.ArithmeticCaptcha;
 import com.wf.captcha.ChineseCaptcha;
@@ -76,7 +76,7 @@ public class CaptchaController {
         BufferedImage image = null;
 
         // 生成验证码
-        String captchaType = BitConfig.getCaptchaType();
+        String captchaType = captchaConfig.getType();
         if ("math".equals(captchaType)) {
             String capText = captchaProducerMath.createText();
             capStr = capText.substring(0, capText.lastIndexOf("@"));

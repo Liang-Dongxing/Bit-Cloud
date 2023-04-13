@@ -15,5 +15,9 @@
 
     <packaging>pom</packaging>
     <name>bit-api</name>
+    <modules>
+        <module>bit-api-config</module>
+        <module>bit-api-dict</module>
+    </modules>
 
 </project>

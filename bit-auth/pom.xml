@@ -75,6 +75,12 @@
             <groupId>com.bit</groupId>
             <artifactId>bit-common-security</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.bit</groupId>
+            <artifactId>bit-api-config</artifactId>
+            <version>1.0.0</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
 </project>
